@@ -91,27 +91,34 @@ WSGI_APPLICATION = 'blog_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-if 'sqlite3' in os.environ.get('ENGINE') or 'test' in sys.argv:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-            'PASSWORD': ''
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': env('ENGINE'),
-            'DB_NAME': env('DB_NAME'),
-            'HOST': env('HOST'),
-            'USER': env('USER'),
-            'PASSWORD': env('PASSWORD'),
-            'PORT': env('PORT')
-        }
-    }
+# if 'sqlite3' in os.environ.get('ENGINE') or 'test' in sys.argv:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#             'PASSWORD': ''
+#         }
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': env('ENGINE'),
+#             'DB_NAME': env('DB_NAME'),
+#             'HOST': env('HOST'),
+#             'USER': env('USER'),
+#             'PASSWORD': env('PASSWORD'),
+#             'PORT': env('PORT')
+#         }
+#     }
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        'PASSWORD': ''
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 

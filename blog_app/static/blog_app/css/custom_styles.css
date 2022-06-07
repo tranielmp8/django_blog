@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Source+Code+Pro:wght@400;600;800&family=Varela+Round&display=swap');
+
+
+.footer-dnp {
+  width: 300px;
+  height: 200px;
+}
+
+.navbar {
+  background: linear-gradient(to right, rgb(140, 0, 140), rgb(246, 1, 246));
+  font-family: 'Abril Fatface', cursive;
+
+}
+
+.home-header, .post-title {
+  font-family: 'Abril Fatface', cursive;
+}
+

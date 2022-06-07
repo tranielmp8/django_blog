@@ -36,7 +36,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dnp-django-blog.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['dnp-django-blog.herokuapp.com', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition

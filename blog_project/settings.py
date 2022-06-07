@@ -91,25 +91,25 @@ WSGI_APPLICATION = 'blog_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-# if 'sqlite3' in os.environ.get('ENGINE') or 'test' in sys.argv:
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'PASSWORD': ''
+if 'sqlite3' in os.environ.get('ENGINE') or 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+            'PASSWORD': ''
+        }
     }
-}
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': env('ENGINE'),
-#             'DB_NAME': env('DB_NAME'),
-#             'HOST': env('HOST'),
-#             'USER': env('USER'),
-#             'PASSWORD': env('PASSWORD'),
-#             'PORT': env('PORT')
-#         }
-#     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': env('ENGINE'),
+            'DB_NAME': env('DB_NAME'),
+            'HOST': env('HOST'),
+            'USER': env('USER'),
+            'PASSWORD': env('PASSWORD'),
+            'PORT': env('PORT')
+        }
+    }
 
 
 # Password validation
@@ -153,10 +153,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/blog_app/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'blog_app/static/'),
-)
 
 # Custom Settings:
 

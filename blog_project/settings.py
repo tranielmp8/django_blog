@@ -170,4 +170,4 @@ DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR+'/blog_app/', 'staticfiles')

@@ -1,0 +1,14 @@
+{% extends 'blog_app/base.html' %} 
+
+{% load crispy_forms_tags %}
+
+
+    <!-- Main Content-->
+    {% block content %}
+      <div class="col-md-8 mx-auto">
+       <p>You have successfully logged out, do you want to login again?</p>
+       <hr>
+       <a href="{% url 'users-login' %}">Login</a>
+      </div>
+
+{% endblock %}

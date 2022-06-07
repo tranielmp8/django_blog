@@ -1,0 +1,19 @@
+{% extends 'blog_app/base.html' %} 
+
+{% load crispy_forms_tags %}
+
+
+    <!-- Main Content-->
+    {% block content %}
+      <div class="col-md-8 mx-auto">
+        <form  action="" method="POST">
+        {% csrf_token %}
+        <p class="m-5" >
+         {{ form | crispy }} 
+        </p>
+        <button type="submit" class="btn btn-primary" id="sendMessageButton" >Login</button>
+      </form>
+      <a href="{% url 'password_reset' %}">Reset Password</a>
+      </div>
+
+    {% endblock %}

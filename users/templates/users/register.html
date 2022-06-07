@@ -1,0 +1,16 @@
+{% extends 'blog_app/base.html' %} 
+
+{% load crispy_forms_tags %}
+
+
+    <!-- Main Content-->
+{% block content %}
+  <div class="col-lg-8 col-md-10 mx-auto">
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form|crispy }} 
+      <button type="submit" class="btn btn-primary" id="sendMessageButton" >Register</button>
+    </form>
+  </div>
+
+{% endblock %}

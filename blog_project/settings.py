@@ -155,7 +155,7 @@ STATIC_URL = '/static/blog_app/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static/blog_app/'),
+    os.path.join(BASE_DIR, 'blog_app/static/'),
 )
 
 # Custom Settings:

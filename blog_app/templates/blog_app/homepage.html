@@ -30,17 +30,18 @@
           <hr class="my-4" />
           <!-- Post preview-->
           {% endfor %}
-          <nav aria-label="Page navigation example">
+          <nav  aria-label="Page navigation example">
             <ul class="pagination">
+              {% if page_obj %} 
                 {% if page_obj.has_previous %}
                 <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
                   <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">< previous</a></li>
                 {% endif %}
-                   
+                
             {% for i in page_obj.paginator.page_range %}
               {% if page_obj.number == i %}
-              <li class="page-item active">
-                <a class="page-link " href="?page={{page_obj.number}}">{{page_obj.number}}</a>
+              <li class="page-item active"  >
+                <a class="page-link " style="background-color: rgb(140,0,140);" href="?page={{page_obj.number}}">{{page_obj.number}}</a>
               </li>
               {% elif i > page_obj.number|add:'-3' and i < page_obj.number|add:'3' %}
               <li class="page-item">
@@ -48,11 +49,12 @@
               </li> 
               {% endif %}
             {% endfor %}
-
+          
                 {% if page_obj.has_next %}
                 <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next ></a>
                   <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
                 {% endif %}
+            {% endif %}
             </ul>
           </nav>
           

@@ -9,10 +9,18 @@
 .navbar {
   background: linear-gradient(to right, rgb(140, 0, 140), rgb(246, 1, 246));
   font-family: 'Abril Fatface', cursive;
-
+  
 }
 
+.navbar-brand {
+  color: #fff;
+}
 .home-header, .post-title {
   font-family: 'Abril Fatface', cursive;
+  
+}
+
+.pagination {
+  text-align: center;
 }
 

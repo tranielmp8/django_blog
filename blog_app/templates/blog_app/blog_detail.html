@@ -13,14 +13,16 @@
               <p>
                 {{blog.content}}
               </p>
-              <p class="post-meta">
+              <i>
+              <p class="post-meta" style="color: #999;" >
                   Posted by: {{blog.author.username}}
                   on: {{blog.post_created}}
               </p>
+            </i>
               {% if blog.author == user %}
               <div>
-                <a href="{% url 'blog-post-update' blog.id %}" class="btn btn-info" >UPDATE</a>
-                <a href="{% url 'blog-post-delete' blog.id %}" class="btn btn-danger" >DELETE</a>
+                <a href="{% url 'blog-post-update' blog.id %}" class="btn btn-info" style="background-color: rgb(140,0,140); color: #fff; border: none;" >UPDATE</a>
+                <a href="{% url 'blog-post-delete' blog.id %}" class="btn btn-danger" style="background-color: #777; color: #fff; border: none;">DELETE</a>
               </div>
               {% endif %}
           </div>

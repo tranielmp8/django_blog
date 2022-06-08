@@ -23,7 +23,8 @@
         {% csrf_token %}
         {{ user_form|crispy }} 
         {{ profile_picture_form|crispy }} 
-        <button type="submit" class="btn btn-primary" id="sendMessageButton" >Update Profile</button>
+        <button type="submit" class="btn btn-primary" id="sendMessageButton"
+        style="background-color: rgb(140,0,140); color: #fff; border: none;" >Update Profile</button>
 
         <hr>
 

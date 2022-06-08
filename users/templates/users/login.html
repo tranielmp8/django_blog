@@ -11,7 +11,8 @@
         <p class="m-5" >
          {{ form | crispy }} 
         </p>
-        <button type="submit" class="btn btn-primary" id="sendMessageButton" >Login</button>
+        <button type="submit" class="btn btn-primary" id="sendMessageButton" 
+        style="background-color: rgb(140,0,140); color: #fff; border: none;">Login</button>
       </form>
       <a href="{% url 'password_reset' %}">Reset Password</a>
       </div>

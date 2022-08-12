@@ -54,7 +54,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
 
     # 3rd party apps
-    'crispy_forms'
+    'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -114,13 +115,12 @@ WSGI_APPLICATION = 'blog_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'd2ljbpiu6sdv0p',
-        'HOST': 'ec2-52-206-182-219.compute-1.amazonaws.com',
-        'PORT': 5432,
+        'ENGINE': env('ENGINE'),
+        'NAME': env('NAME'),
+        'HOST': env('HOST'),
+        'PORT': env('PORT'),
         'USER': env('DB_USER'),
         'PASSWORD': env('PASSWORD')
-
     }
 }
 
@@ -187,3 +187,12 @@ MEDIA_URL = '/media/'
 # EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 # EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 # DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+
+
+# # Amazons S3 Bucket settings
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'djangoblog-s3-bucket'
+AWS_QUERYSTRING_AUTH = False

@@ -10,7 +10,7 @@
     />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'blog_app/icon/dnp.ico' %}" />
     <!-- Font Awesome icons (free version)-->
     <script
       src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
@@ -73,11 +73,11 @@
             </li>
             
             {% if not user.is_authenticated %}
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users-register' %}"
                 >Register</a
               >
-            </li> -->
+            </li>
             <li class="nav-item">
               <a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'users-login' %}"
                 >Login</a
